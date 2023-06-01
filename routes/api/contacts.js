@@ -16,11 +16,12 @@ const {
   validateFavoriteBody,
   checkEmptyBody,
   isValidId,
+  authenticate,
 } = require("../../middlewares");
 
 const schemas = require("../../schemas");
 
-router.get("/", getAll);
+router.get("/", authenticate, getAll);
 
 router.get("/:contactId", isValidId, getById);
 
