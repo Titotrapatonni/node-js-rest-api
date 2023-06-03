@@ -6,11 +6,11 @@ const userSchema = new Schema(
   {
     password: {
       type: String,
-      required: true,
+      required: [true, "Set password for user"],
     },
     email: {
       type: String,
-      required: true,
+      required: [true, "Email is required"],
       unique: true,
     },
     subscription: {
